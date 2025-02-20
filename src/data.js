@@ -54,7 +54,8 @@ export const aboutAdvantages = [
 	}
 ]
 export const teamMates = [
-	{
+	{	
+		id: "TGaiduchenko",
 		name: "Тетяна Гайдученко",
 		posts: [{text: 'Academic director'},
 			{text: 'Oil&Gas English'},
@@ -71,11 +72,34 @@ export const teamMates = [
 			         {text: 'TKT (Teaching Knowledge Test) modules 1,2,3'},
 					 {text: 'PEIC ( Pearson English International Certificate) Advanced, Level 4'},
 					 {text: 'Interlocutor for Pearson English International Certificate'}],
-		photo: "./images/TGaiduchenko.jpg",
+		photo: "/images/TGaiduchenko.jpg",
 		alt: "Фото викладача Тетяна Гайдученко",
-		url: "#"
+		certificates: [
+			{
+				src: '/images/Gaiduchenko_Т_1.jpg'
+			},
+			{
+				src: '/images/Gaiduchenko_Т_2.jpg'
+			},
+			{
+				src: '/images/Gaiduchenko_Т_3.jpg'
+			},
+			{
+				src: '/images/Gaiduchenko_Т_4.jpg'
+			},
+			{
+				src: '/images/Gaiduchenko_Т_5.jpg'
+			},
+			{
+				src: '/images/Gaiduchenko_Т_6.jpg'
+			},
+			{
+				src: '/images/Gaiduchenko_Т_7.jpg'
+			},
+		]
 	},
 	{
+		id: "SGaiduchenko",
 		name: "Cергій Гайдученко",
 		posts: [{text:'Співвласник ТОВ «Мовний Центр «СТАТУС»'},
 			{text: 'Психолог'},
@@ -87,11 +111,25 @@ export const teamMates = [
 			{text: "TKT (Teaching Knowledge Test) modules 1,2,3"},
 			{text: "PEIC ( Pearson English International Certificate) Advanced, Level 4."},
 			{text: "Interlocutor for Pearson English International Certificate"}],
-		photo: "./images/SGaiduchenko.jpg",
+		photo: "/images/SGaiduchenko.jpg",
 		alt: "Фото викладача Сергій Гайдученко",
-		url: "#"
+		certificates: [
+			{
+				src: '/images/Gaiduchenko_S_1.jpg'
+			},
+			{
+				src: '/images/Gaiduchenko_S_2.jpg'
+			},
+			{
+				src: '/images/Gaiduchenko_S_3.jpg'
+			},
+			{
+				src: '/images/Gaiduchenko_S_4.jpg'
+			},
+		]
 	},
 	{
+		id: "SEmets",
 		name: "Світлана Ємець",
 		posts: [{text: 'Senior Teacher'},
 			{text: 'General English'},
@@ -109,9 +147,49 @@ export const teamMates = [
 		experiences: [{text: "C1 Advanced"},
 					{text:"Ελληνικά Γ2 / Greek C2 Proficiency"},
 					{text: "Participation in professional development and teacher training events"}],
-		photo: "./images/SEmets.jpg"
+		photo: "/images/SEmets.jpg",
+		alt: "Фото викладача Світлана Ємець",
+		certificates: [
+			{
+				src: '/images/Emets_S_1.jpg'
+			},
+			{
+				src: '/images/Emets_S_2.jpg'
+			},
+			{
+				src: '/images/Emets_S_3.jpg'
+			},
+			{
+				src: '/images/Emets_S_4.jpg'
+			},
+			{
+				src: '/images/Emets_S_5.jpg'
+			},
+			{
+				src: '/images/Emets_S_6.jpg'
+			},
+			{
+				src: '/images/Emets_S_7.jpg'
+			},
+			{
+				src: '/images/Emets_S_8.jpg'
+			},
+			{
+				src: '/images/Emets_S_10.jpg'
+			},
+			{
+				src: '/images/Emets_S_12.jpg'
+			},
+			{
+				src: '/images/Emets_S_14.jpg'
+			},
+			{
+				src: '/images/Emets_S_16.jpg'
+			},
+		]
 	},
 	{
+		id: "ADribna",
 		name: "Альона Дрібна",
 		posts: [{text:'Senior teacher'},
 			{text: 'English for IT'},
@@ -124,9 +202,43 @@ export const teamMates = [
 			{text: "Interlocutor for PEIC"},
 			{text: "Oral examiner for PEIC Young learners"},
 			{text: "Participation in professional development and teacher training events"}],
-		photo: "./images/ADribna.jpg"
+		photo: "/images/ADribna.jpg",
+		alt: "Фото викладача Альона Дрібна",
+		certificates: [
+			{
+				src: '/images/Dribna_A_1.jpg'
+			},
+			{
+				src: '/images/Dribna_A_2.jpg'
+			},
+			{
+				src: '/images/Dribna_A_3.jpg'
+			},
+			{
+				src: '/images/Dribna_A_4.jpg'
+			},
+			{
+				src: '/images/Dribna_A_5.jpg'
+			},
+			{
+				src: '/images/Dribna_A_6.jpg'
+			},
+			{
+				src: '/images/Dribna_A_7.jpg'
+			},
+			{
+				src: '/images/Dribna_A_8.jpg'
+			},
+			{
+				src: '/images/Dribna_A_9.jpg'
+			},
+			{
+				src: '/images/Dribna_A_10.jpg'
+			},
+		]
 	},
 	{
+		id: "MSmilyanets",
 		name: "Маргарита Смілянець",
 		posts: [{text: 'Senior teacher'},
 			{text: 'Business English'},
@@ -137,9 +249,37 @@ export const teamMates = [
 		educations: [{text:"Національний університет Полтавська політехніка (Магістр: інженер-технолог)"}],
 		experiences: [{text:"PEIC (Pearson Edexcel Certificate in ESOL International, CEF C1)"}, 
 			{text: "Participation in professional development and teacher training events."}],
-		photo: "./images/MSmilyanets.jpg"
+		photo: "/images/MSmilyanets.jpg",
+		alt: "Фото викладача Маргарита Смілянець",
+		certificates: [
+			{
+				src: '/images/Smilyanets_M_1.jpg'
+			},
+			{
+				src: '/images/Smilyanets_M_2.jpg'
+			},
+			{
+				src: '/images/Smilyanets_M_4.jpg'
+			},
+			{
+				src: '/images/Smilyanets_M_6.jpg'
+			},
+			{
+				src: '/images/Smilyanets_M_8.jpg'
+			},
+			{
+				src: '/images/Smilyanets_M_10.jpg'
+			},
+			{
+				src: '/images/Smilyanets_M_13.jpg'
+			},
+			{
+				src: '/images/Smilyanets_M_15.jpg'
+			},
+		]
 	},
 	{
+		id: "NHryhorenko",
 		name: "Наталія Григоренко",
 		posts: [{text: 'Senior teacher'},
 			{text: 'Business English'},
@@ -151,9 +291,18 @@ export const teamMates = [
 		],
 		educations: [{text:"Полтавський національний педагогічний університет ім В.Г. Короленка (спеціаліст філології: англійської та німецької мов, та зарубіжної літератури; магістр філології: англійської мови та зарубіжної літератури)"}],
 		experiences: [{text:"С1 Advanced -Interlocutor for Pearson English International Certificate, Participation in professional development and teacher training events"}],
-		photo: "./images/NHryhorenko.jpg"
+		photo: "/images/NHryhorenko.jpg",
+		alt: "Фото викладача Наталія Григоренко",
+		certificates: [
+			{
+				src: '/images/Hryhorenko_N_1.jpg'
+			},
+			{
+				src: '/images/Hryhorenko_N_2.jpg'
+			},]
 	},
 	{
+		id: "VMatiuk",
 		name: "Валерія Матіюк",
 		posts: [{text: 'General English for teens'},
 			{text: 'General English for adults (Levels A1-C1)'},
@@ -164,9 +313,37 @@ export const teamMates = [
 		experiences: [{text: "PEIC (Pearson Edexcel  Certificate in ESOL International, CEF C1)"}, 
 			         {text: "Cormack Consultancy Group IELTS A2-B2 - Reading, Listening, Writing and Speaking"},
 					 {text: "Participation in professional development and teacher training events."}],
-		photo: "./images/VMatiuk.jpg"
+		photo: "/images/VMatiuk.jpg",
+		alt: "Фото викладача Валерія Матіюк",
+		certificates: [
+			{
+				src: '/images/Matiuk_V_1.jpg'
+			},
+			{
+				src: '/images/Matiuk_V_2.jpg'
+			},
+			{
+				src: '/images/Matiuk_V_3.jpg'
+			},
+			{
+				src: '/images/Matiuk_V_4.jpg'
+			},
+			{
+				src: '/images/Matiuk_V_6.jpg'
+			},
+			{
+				src: '/images/Matiuk_V_8.jpg'
+			},
+			{
+				src: '/images/Matiuk_V_10.jpg'
+			},
+			{
+				src: '/images/Matiuk_V_12.jpg'
+			},
+		]
 	},
 	{
+		id: "MKovalenko",
 		name: "Марина Коваленко",
 		posts: [{text: 'General English (Levels A1-C1)'},
 			{text: 'English for special purposes: Marketing and Management'},
@@ -177,9 +354,61 @@ export const teamMates = [
 			        {text: "Полтавський державний педагогічний університет ім. В.Г. Короленка за спеціальністю Управління навчальним закладом (магістр: кваліфікаціїя керівника підприємства, установи та організації (у сфері освіти та виробничого навчання))"}, 
 					{text: "Вищий навчальний заклад Укоопспілки Полтавський університет економіки і торгівлі (кваліфікація: спеціаліст з міжнародної економіки)"}],
 		experiences: [{text: ""}],	
-		photo: "./images/MKovalenko.jpg"
+		photo: "/images/MKovalenko.jpg",
+		alt: "Фото викладача Марина Коваленко",
+		certificates: [
+			{
+				src: '/images/Kovalenko_M_1.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_2.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_3.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_4.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_5.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_6.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_7.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_8.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_9.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_10.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_11.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_12.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_13.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_14.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_15.jpg'
+			},
+			{
+				src: '/images/Kovalenko_M_16.jpg'
+			},
+		]
 	},
 	{
+		id: "LBazhul",
 		name: "Лілія Бажул",
 		posts: [{text: 'Адміністратор'},
 			{text: '15 років досвіду адміністративної діяльності'},
@@ -187,61 +416,16 @@ export const teamMates = [
 			{text: 'Учні та їхні батьки задоволені якістю сервісу та навчання'},
 			{text: 'Чітко налагоджені освітні процеси в Центрі «СТАТУС» працюють без збоїв, а ми зберігаємо репутацію надійного партнера й приваблюємо нових клієнтів'},
 		],
-		educations: [{text:""}],
-		experiences: [{text:""}],	
-		photo: "./images/LBazhul.jpg"
+		educations: [{text:"Не зазначено"}],
+		experiences: [{text:"15 років досвіду адміністративної діяльності"}],	
+		photo: "/images/LBazhul.jpg",
+		alt: "Фото викладача Лілія Бажул",
+		certificates: [{
+			src: ""
+		}]
 	},
 	
 ]
-export const questions = [
-    {
-      text: "What is the capital of America?",
-      options: [
-        { id: 0, text: "New York City", isCorrect: false },
-        { id: 1, text: "Boston", isCorrect: false },
-        { id: 2, text: "Santa Fe", isCorrect: false },
-        { id: 3, text: "Washington DC", isCorrect: true },
-      ],
-    },
-    {
-      text: "What year was the Constitution of America written?",
-      options: [
-        { id: 0, text: "1787", isCorrect: true },
-        { id: 1, text: "1776", isCorrect: false },
-        { id: 2, text: "1774", isCorrect: false },
-        { id: 3, text: "1826", isCorrect: false },
-      ],
-    },
-    {
-      text: "Who was the second president of the US?",
-      options: [
-        { id: 0, text: "John Adams", isCorrect: true },
-        { id: 1, text: "Paul Revere", isCorrect: false },
-        { id: 2, text: "Thomas Jefferson", isCorrect: false },
-        { id: 3, text: "Benjamin Franklin", isCorrect: false },
-      ],
-    },
-    {
-      text: "What is the largest state in the US?",
-      options: [
-        { id: 0, text: "California", isCorrect: false },
-        { id: 1, text: "Alaska", isCorrect: true },
-        { id: 2, text: "Texas", isCorrect: false },
-        { id: 3, text: "Montana", isCorrect: false },
-      ],
-    },
-    {
-      text: "Which of the following countries DO NOT border the US?",
-      options: [
-        { id: 0, text: "Canada", isCorrect: false },
-        { id: 1, text: "Ukraine", isCorrect: true },
-        { id: 2, text: "Cuba", isCorrect: true },
-        { id: 3, text: "Mexico", isCorrect: false },
-      ],
-    },
-  ];
-
-
 export const examsInfo = [
 	{
 		counter: "01",
@@ -272,21 +456,21 @@ export const examsInfo = [
 export const examsTypes = [
 	{
 		counter: "01",
-		title: "Експрес-курс “В2-С1”",
-		price: 'Від 350 грн / год',
-		calendar: 'Графік: гнучкий',
-		estimate: 'Курс: 20 занять по 60 хв.',
+		title: "Експрес-курс: ( “В2-С1” )",
+		price: 'Вартісь за курс: 9.000 грн',
+		calendar: 'Графік: 2 рази на тиждень',
+		estimate: 'Курс: 30 годин',
 		group: 'Групи: до 12 студентів ',
-		order: 'Формат занять: онлайн'
+		order: 'Формат занять: онлайн',
 	},
 	{
 		counter: "02",
-		title: "Річний курс “А2-В2”",
-		price: 'Від 250 грн / год',
-		calendar: 'Графік: 2р. / тиждень',
-		estimate: 'Курс: 80 занять по 90 хв.',
-		group: 'Групи: 8-12 студентів ',
-		order: 'Формат: онлайн / в класі ( м.Полтава )'
+		title: "Річний курс підготовки: ( “A2-B2” )",
+		price: 'Вартісь за курс: від 24.840 грн',
+		calendar: 'Графік: 2 рази на тиждень',
+		estimate: 'Курс: 108 годин',
+		group: 'Групи: 6-9 студентів ',
+		order: 'Формат занять: онлайн/офлайн'
 	},
 ]
 
@@ -352,6 +536,92 @@ export const studyCompanies = [
 		order: '1-ша та 2-га зміни'
 	},
 ]
+export const servicesKids = [
+	{
+		counter: "01",
+		title: "Безкоштовне вступне тестування",
+		description: "Для визначення рівня знань і підбору оптимальної групи за віком та рівнем"
+	},
+	{
+		counter: "02",
+		title: "Пробні заняття",
+		description: "Щоб ознайомитись з викладачем, групою та атмосферою уроків"
+	},
+	{
+		counter: "03",
+		title: "Підготовка до НМТ та міжнародних іспитів",
+		description: "PEiC, IELTS, TOEFL"
+	},
+	{
+		counter: "04",
+		title: "Фінальний річний іспит",
+		description: "із сертифікатом і рекомендаціями для подальшого навчання"
+	},
+	{
+		counter: "05",
+		title: "Особистий кабінет учня",
+		description: "із інтерактивним підручником"
+	},
+	{
+		counter: "06",
+		title: "Постійний супровід у месенджері",
+		description: "для постійного зв’язку"
+	},
+	{
+		counter: "07",
+		title: "Динамічний контроль успішності",
+		description: "з детальним звітом для батьків"
+	},
+	{
+		counter: "08",
+		title: "99% занять англійською мовою",
+		description: "для занурення у мовне середовище"
+	},
+]
+export const studyKids612 = [
+	{
+		counter: "01",
+		title: "Індивідуальні заняття",
+		price: 'від 600 грн/год',
+		calendar: 'гнучкий графік занять',
+		estimate: 'заняття 60 хвилин',
+		group: 'один учень',
+		order: 'з 08:00 до 21:00',
+		course: 'курс: 50 занять'
+	},
+	{
+		counter: "02",
+		title: "Групові заняття",
+		price: 'від 230 грн/год',
+		calendar:'2 рази на тиждень',
+		estimate: '60 хвилин',
+		group: 'групи 6-9 студентів',
+		order: '1-ша та 2-га зміни',
+		course: 'курс: 80 занять'
+	},
+]
+export const studyKids1318 = [
+	{
+		counter: "01",
+		title: "Індивідуальні заняття",
+		price: 'від 750 грн/год',
+		calendar: 'гнучкий графік занять',
+		estimate: 'заняття 60 хвилин',
+		group: 'один учень',
+		order: 'з 08:00 до 21:00',
+		course: 'курс: від 40 занять'
+	},
+	{
+		counter: "02",
+		title: "Групові заняття",
+		price: 'від 250 грн/год',
+		calendar:'2 рази на тиждень',
+		estimate: '90 хвилин',
+		group: 'групи 6-9 студентів',
+		order: '1-ша та 2-га зміни',
+		course: 'курс: 80 занять'
+	},
+]
 
 export const textPromo = [
 	{text: 'Заговоріть англійською легко та впевнено'},
@@ -360,3 +630,30 @@ export const textPromo = [
 	{text: '-впевнено спілкуйтеся з іноземцями'}, 
 	{text: 'Почніть із найважливішого — вивчення англійської мови!'},
    ];
+
+
+export const Reviews = [
+	{
+		logo: 'https://www.jti.com/themes/investis_bootstrap/images/jti_logo.svg',
+		text: 'Відділ Тренінгу та Розвитку ЗАТ "Джей Ті Інтернешнл Компані Україна", в особі спеціаліста із питань тренінгу та розвитку Рак Юлії, висловлює свою подяку Центру «СТАТУС» за високу якість навчання з англійської мови, що надається співробітникам компанії Джей Ті Інтернешнл протягом 2008 року. З упевненістю можемо сказати, що рекомендуємо Центр «СТАТУС» як компанію високого професійного рівня' + '\n' + 'Спеціаліст із тренінгів та розвитку' + '\n' + 'Відділ персоналу Джей Ті Інтернешнл Компані Україна'  + '\n' + 'Юлія Рак',
+		
+	},
+	{
+		logo: '/images/ppclogo.svg',
+		text: 'СП „Полтавська газонафтова компанія" в 2008 році розпочала співпрацю з Полтавським Центром вивчення іноземних мов „Статус". За період надання послуг керівництво та співробітники Центру „Статус" показали високий професійний рівень, компетентність та творчий підхід до вирішення поставлених завдань, наявність налагоджених методик навчання, які відповідають високим стандартам.' + '\n' + 'Генеральний директор' + '\n' + 'Каунов Т.С.',
+		
+	},
+	{
+		logo: 'https://www.syngenta.ua/sites/g/files/kgtney1466/files/color/syn_global_theme-7edf2a19/logo.svg',
+		text: 'Компанія ТОВ «Сингента» висловлює подяку ПП «Центр «СТАТУС» за надані на високому рівні освітні послуги нашому співробітнику. Вважаємо необхідним підкреслити високу кваліфікацію викладача та уважне ставлення до слухача курсів. Впевнені, що знання, отримані на курсах, допоможуть співробітникам нашої компанії в роботі. Будемо раді й надалі співпрацювати з Вами та рекомендувати Ваші послуги іншим фірмам.' + '\n' + 'З повагою,' + '\n' + 'Директор департаменту насінництва'  + '\n' + 'Гебхард Рогенхофер',
+		
+	},
+	{
+		logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwzJ_T71HxwMoEGctQlsEv9qbdSd1qm0N12w&s',
+		text: 'Компанія "НТП Бурова Техніка" висловлює вдячність Мовному Центру "Статус" за плідну співпрацю, яка триває з 2014 року. За цей період фахівці Мовного Центру "Статус" успішно організували та провели курси англійської мови для наших інженерів і працівників, орієнтуючись на специфічні потреби нафтогазової галузі. Викладачі центру демонструють високий професіоналізм, використовуючи сучасні методики навчання та індивідуальний підхід до кожного учасника. Результатом цього навчання стало значне підвищення мовних компетенцій наших співробітників. Вони впевнено використовують англійську мову у професійному спілкуванні з партнерами, у технічній документації та під час участі в міжнародних проєктах. Це сприяло зміцненню нашого позиціонування на глобальному ринку, підвищенню ефективності співпраці з іноземними партнерами та розширенню можливостей компанії. Ми високо цінуємо внесок Мовного Центру "Статус" у професійний розвиток нашої команди та рекомендуємо його послуги як надійного партнера для всіх компаній, що прагнуть інвестувати у розвиток мовних навичок своїх працівників.' + '\n' + 'Генеральний директор, к.т.н.' + '\n' + 'В.Г. Вітриг',
+	},
+	{
+		logo: 'https://static.tildacdn.one/tild6637-6233-4864-b631-623461343461/Unknown-removebg-pre.png',
+		text: 'ТОВ "ПОЛТАВА-САД" в 2014 році розпочало співпрацю з Центром вивчення іноземних мов „Статус". За період надання послуг співробітники Центру „Статус" показали високий професійний рівень, компетентність та творчий підхід до вирішення поставлених завдань, наявність налагоджених методик навчання, які відповідають високим стандартам. Вважаємо необхідним підкреслити високу кваліфікацію викладачів та уважне ставлення до слухачів курсів. Впевнені, що знання, отримані на курсах, допоможуть співробітникам нашої компанії у подальшій роботі.' + '\n' + 'Директор ТОВ "ПОЛТАВА-САД"' + '\n' + 'Д. В. Штанько',
+	},
+]

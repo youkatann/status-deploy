@@ -5,14 +5,14 @@ import { useRef, useEffect } from "react";
 import * as React from 'react';
 
 export interface ICurveProps {
-    curveColor: string;
+    curveColor?: string;
 }
 interface MouseEvent {
     movementY: number;
     clientX: number;
   }
 
-export default function Index ({curveColor}:any , props: ICurveProps) {
+  export default function Index({ curveColor }: ICurveProps) {
  // Define a reference to an SVGPathElement
  const path = useRef<SVGPathElement>(null);
 

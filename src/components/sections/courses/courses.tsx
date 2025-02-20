@@ -21,8 +21,8 @@ export default function Courses (props: ICoursesProps) {
   const scrollAnimationX3 = useTransform(scrollYProgress, [0, 0.5], [800, 0])
 
   return (
-    <section ref={container} className="relative h-fit flex py-28 px-16 justify-between border-t-2 border-black gap-16">
-        <motion.div className="z-[10] flex flex-col gap-12 w-2/4"
+    <section ref={container} className="relative h-fit flex flex-col xl:flex-row p-4 xl:py-28 xl:px-16 justify-between border-t-2 border-black gap-16">
+        <motion.div className="z-[10] flex flex-col gap-12 w-full xl:w-2/4"
         style={{
           y: scrollAnimationY
         }}
@@ -31,7 +31,7 @@ export default function Courses (props: ICoursesProps) {
           scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
         }}
         >
-        <h2 className="text-[110px] leading-[0.8] tracking-tighter text-pretty font-extrabold">Співпраця, <br/>яку ми пропонуємо</h2>
+        <h2 className=" text-5xl xl:text-8xl xl:text-[110px] leading-[0.8] tracking-tighter text-pretty font-extrabold">Співпраця, <br/>яку ми пропонуємо</h2>
         <p className="text-2xl leading-[0.9] tracking-tighter text-pretty font-medium">Розкрийте свій потенціал разом із нами! Наші курси створені для тих, хто хоче отримати практичні знання та навички, що відкривають нові можливості. Обирайте з широкого спектра напрямків – від IT і маркетингу до особистісного розвитку. Пориньте у навчання, яке працює на вас! </p>
 <motion.button className="z-[13] px-9 py-4 border-2 border-black shadow-brutalism bg-purpleLight w-fit" type="submit"
           onMouseEnter={() => setIsButtonHovered(true)}
@@ -65,8 +65,8 @@ export default function Courses (props: ICoursesProps) {
             </p>
           </motion.button>
         </motion.div>
-        <div className="z-[10] w-2/4 flex flex-col gap-12">
-        <motion.div className="relative flex flex-col gap-8 w-full bg-blueLight border-2 border-black shadow-brutalism p-8"
+        <div className="z-[10] w-full xl:w-2/4 flex flex-col gap-12">
+        <motion.div className="relative flex flex-col gap-8 w-full bg-blueLight border-2 border-black shadow-brutalism p-4 xl:p-8"
             style={{
               x: scrollAnimationX1
             }}
@@ -75,27 +75,27 @@ export default function Courses (props: ICoursesProps) {
               scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
             }}
           >
-          <div className="flex justify-between items-center border-b-2 border-black pb-8 pr-8">
-            <h3 className="text-4xl leading-[0.9] tracking-tighter text-pretty font-black">Для компаній</h3>
-            <p className="uppercase font-bold text-base">online / offline</p>
+          <div className="flex justify-between items-center border-b-2 border-black pb-8 pr-0 xl:pr-8">
+            <h3 className="text-2xl xl:text-4xl leading-[0.9] tracking-tighter text-pretty font-black">Для компаній</h3>
+            <p className="uppercase font-bold text-sm xl:text-base">online / offline</p>
           </div>
             <div className="flex flex-col gap-4">
-            <div className="flex justify-between items-center p-4 bg-white border-2 border-black shadow-brutalism">
-            <h4 className="text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Індивідуальні заняття</h4>
-            <p className="text-xl font-black">від 600 грн/год</p>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center p-2 xl:p-4 bg-white border-2 border-black shadow-brutalism">
+            <h4 className="text-lg md:text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Індивідуальні заняття</h4>
+            <p className="text-base xl:text-xl font-black mt-4 md:mt-0">від 600 грн/год</p>
             </div>
-            <div className="flex justify-between items-center p-4 bg-white border-2 border-black shadow-brutalism">
-            <h4 className="text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Групові заняття</h4>
-            <p className="text-xl font-black">від 230 грн/год</p>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center p-2 xl:p-4 bg-white border-2 border-black shadow-brutalism">
+            <h4 className="text-lg md:text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Групові заняття</h4>
+            <p className="text-base xl:text-xl font-black mt-4 md:mt-0">від 230 грн/год</p>
             </div>
-            <div className="flex justify-between items-center p-4 bg-white border-2 border-black shadow-brutalism">
-            <h4 className="text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Підготовка до НМТ</h4>
-            <p className="text-xl font-black">від 9000 грн/курс</p>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center p-2 xl:p-4 bg-white border-2 border-black shadow-brutalism">
+            <h4 className="text-lg md:text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Підготовка до НМТ</h4>
+            <p className="text-base xl:text-xl font-black mt-4 md:mt-0">від 9000 грн/курс</p>
             </div>
-            <img className="z-[20] scale-[0.4] absolute top-[-80] right-[-80]" src='/images/octangle.svg'/>
+            <img className="z-[20] scale-[0.4] absolute top-[-80px] right-[-80px]" src='/images/octangle.svg'/>
           </div>
           </motion.div>
-          <motion.div className="relative flex flex-col gap-8 w-full bg-pinkLight border-2 border-black shadow-brutalism p-8"
+          <motion.div className="relative flex flex-col gap-8 w-full bg-pinkLight border-2 border-black shadow-brutalism p-4 xl:p-8"
             style={{
               x: scrollAnimationX2
             }}
@@ -104,25 +104,25 @@ export default function Courses (props: ICoursesProps) {
               scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
             }}
             >
-          <div className="flex justify-between items-center border-b-2 border-black pb-8 pr-8"
+          <div className="flex justify-between items-center border-b-2 border-black pb-8 pr-0 xl:pr-8"
           >
-            <h3 className="text-4xl leading-[0.9] tracking-tighter text-pretty font-black">Для дорослих</h3>
-            <p className="uppercase font-bold text-base">online / offline</p>
+            <h3 className="text-2xl xl:text-4xl leading-[0.9] tracking-tighter text-pretty font-black">Для дорослих</h3>
+            <p className="uppercase font-bold text-sm xl:text-base">online / offline</p>
           </div>
             <div className="flex flex-col gap-4">
-            <div className="flex justify-between items-center p-4 bg-white border-2 border-black shadow-brutalism">
-            <h4 className="text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Індивідуальні заняття</h4>
-            <p className="text-xl font-black">від 600 грн/год</p>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center p-2 xl:p-4 bg-white border-2 border-black shadow-brutalism">
+            <h4 className="text-lg md:text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Індивідуальні заняття</h4>
+            <p className="text-base xl:text-xl font-black mt-4 md:mt-0">від 600 грн/год</p>
             </div>
-            <div className="flex justify-between items-center p-4 bg-white border-2 border-black shadow-brutalism">
-            <h4 className="text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Групові заняття</h4>
-            <p className="text-xl font-black">від 230 грн/год</p>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center p-2 xl:p-4 bg-white border-2 border-black shadow-brutalism">
+            <h4 className="text-lg md:text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Групові заняття</h4>
+            <p className="text-base xl:text-xl font-black mt-4 md:mt-0">від 230 грн/год</p>
             </div>
-            <div className="flex justify-between items-center p-4 bg-white border-2 border-black shadow-brutalism">
-            <h4 className="text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Підготовка до НМТ</h4>
-            <p className="text-xl font-black">від 9000 грн/курс</p>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center p-2 xl:p-4 bg-white border-2 border-black shadow-brutalism">
+            <h4 className="text-lg md:text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Підготовка до НМТ</h4>
+            <p className="text-base xl:text-xl font-black mt-4 md:mt-0">від 9000 грн/курс</p>
             </div>
-            <img className="z-[20] scale-[0.5] absolute top-[-80] right-[-80]" src='/images/triangle.svg'/>
+            <img className="z-[20] scale-[0.5] absolute top-[-80px] right-[-80px]" src='/images/triangle.svg'/>
           </div>
           </motion.div>
           <motion.div className="relative flex flex-col gap-8 w-full bg-purpleLight border-2 border-black shadow-brutalism p-8"
@@ -134,25 +134,25 @@ export default function Courses (props: ICoursesProps) {
               scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
             }}
             >
-          <div className="flex justify-between items-center border-b-2 border-black pb-8 pr-8">
-            <h3 className="text-4xl leading-[0.9] tracking-tighter text-pretty font-black">Для дітей</h3>
-            <p className="uppercase font-bold text-base">online / offline</p>
+          <div className="flex justify-between items-center border-b-2 border-black pb-8 pr-0 xl:pr-8">
+            <h3 className="text-2xl xl:text-4xl leading-[0.9] tracking-tighter text-pretty font-black">Для дітей</h3>
+            <p className="uppercase font-bold text-sm xl:text-base">online / offline</p>
           </div>
             <div className="flex flex-col gap-4">
-            <div className="flex justify-between items-center p-4 bg-white border-2 border-black shadow-brutalism">
-            <h4 className="text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Індивідуальні заняття</h4>
-            <p className="text-xl font-black">від 600 грн/год</p>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center p-2 xl:p-4 bg-white border-2 border-black shadow-brutalism">
+            <h4 className="text-lg md:text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Індивідуальні заняття</h4>
+            <p className="text-base xl:text-xl font-black mt-4 md:mt-0">від 600 грн/год</p>
             </div>
-            <div className="flex justify-between items-center p-4 bg-white border-2 border-black shadow-brutalism">
-            <h4 className="text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Групові заняття</h4>
-            <p className="text-xl font-black">від 230 грн/год</p>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center p-2 xl:p-4 bg-white border-2 border-black shadow-brutalism">
+            <h4 className="text-lg md:text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Групові заняття</h4>
+            <p className="text-base xl:text-xl font-black mt-4 md:mt-0">від 230 грн/год</p>
             </div>
-            <div className="flex justify-between items-center p-4 bg-white border-2 border-black shadow-brutalism">
-            <h4 className="text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Підготовка до НМТ</h4>
-            <p className="text-xl font-black">від 9000 грн/курс</p>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center p-2 xl:p-4 bg-white border-2 border-black shadow-brutalism">
+            <h4 className="text-lg md:text-2xl leading-[0.9] tracking-tighter text-pretty font-bold">Підготовка до НМТ</h4>
+            <p className="text-base xl:text-xl font-black mt-4 md:mt-0">від 9000 грн/курс</p>
             </div>
             <motion.img
-            className="z-[20] scale-[0.4] absolute top-[-80] right-[-80]" src='/images/circle.svg'/>
+            className="z-[20] scale-[0.4] absolute top-[-80px] right-[-80px]" src='/images/circle.svg'/>
           </div>
           </motion.div>
         </div>

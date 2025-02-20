@@ -34,6 +34,7 @@ export default function Home() {
   
   return (
     <main>
+      <Cursor/>
       <Navbar/>
       <Hero/>
       <About/>
@@ -43,7 +44,6 @@ export default function Home() {
       <Test/>
       <FAQ/>
       <Footer/>
-      <Cursor/>
     </main>
   );
 }

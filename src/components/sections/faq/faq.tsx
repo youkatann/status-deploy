@@ -1,11 +1,14 @@
 'use client'
-import { createContext, useContext, useRef, useEffect, useState } from "react"
-import { motion, useMotionValue, useSpring, useScroll, useTransform } from 'motion/react';
+import { createContext, useContext, useRef, useEffect, useState, ReactNode, Dispatch, SetStateAction } from "react"
+import { motion, useScroll, useTransform } from 'motion/react';
 import Curve from "@/components/ui/curve"
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid"
 
-const AccordianContext = createContext()
+const AccordianContext = createContext({
+  selected: null as string | null | undefined,
+  setSelected: (() => {}) as Dispatch<SetStateAction<string | null | undefined>>,
+})
 
 export default function FAQ() {
 
@@ -22,11 +25,11 @@ export default function FAQ() {
 
   const MotionQuestionMarkCircleIcon = motion(QuestionMarkCircleIcon)
     return (
-        <section ref={container} className="relative flex flex-col pt-28 px-16 bg-indigo-50 border-t-2 gap-16 border-black">
+        <section ref={container} className="relative flex flex-col p-4 lg:pt-28 lg:px-16 bg-indigo-50 border-t-2 gap-16 border-black">
         <div className="flex flex-col">
-              <div className="flex gap-20">
+              <div className="flex flex-col lg:flex-row gap-20">
                 <motion.div 
-                className="w-2/4 flex gap-4"
+                className="w-full lg:w-2/4 flex gap-4"
                 style={{
                     x: scrollAnimationX
                 }}
@@ -50,7 +53,7 @@ export default function FAQ() {
                 </motion.div>
                 </motion.div>
                 <motion.div 
-                className="w-2/4 flex justify-end items-end"
+                className="w-full lg:w-2/4 flex justify-end items-end"
                 style={{
                     x: scrollAnimationX1
                 }}
@@ -60,27 +63,27 @@ export default function FAQ() {
                   }}
                 >
                   <motion.p 
-                className="relative text-3xl font-semibold max-w-screen-lg tracking-tight font-blackleading-[1.2] border-2 border-black shadow-brutalism p-4 bg-white">
+                className="relative text-xl lg:text-3xl font-semibold max-w-full lg:max-w-screen-lg tracking-tight font-blackleading-[1.2] border-2 border-black shadow-brutalism p-8 lg:p-4 bg-white">
                    Знайдіть відповіді на поширені запитання про наші програми та послуги з вивчення англійської мови
-                    <img className="z-[20] absolute scale-[0.5] top-[-80] right-[-80]" src='/images/octangle.svg'/>
+                    <img className="z-[20] absolute scale-[0.5] top-[-80px] right-[-80px]" src='/images/octangle.svg'/>
                   </motion.p>
                 </motion.div>
               </div>
         <Curve curveColor="#0f172a"/>
         </div>
-        <div className='flex mb-10'>
+        <div className='flex mb-10 z-[20]'>
                 <motion.div
                 initial={{ x: 0 }}
                 animate={{ x: "-100%" }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className='pr-12 m-0 text-9xl uppercase font-black text-[#5b21b6] leading-[0.9] tracking-tight flex flex-shrink-0'
+                className='pr-12 m-0 text-5xl lg:text-9xl uppercase font-black text-[#5b21b6] leading-[0.9] tracking-tight flex flex-shrink-0'
                 >
                   Не гадай, дізнайся у нас!  —</motion.div>
                   <motion.div
                 initial={{ x: 0 }}
                 animate={{ x: "-100%" }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className='pr-12 m-0 text-9xl uppercase font-black text-[#5b21b6] leading-[0.9] tracking-tight flex flex-shrink-0'
+                className='pr-12 m-0 text-5xl lg:text-9xl uppercase font-black text-[#5b21b6] leading-[0.9] tracking-tight flex flex-shrink-0'
                 >
                   Не гадай, дізнайся у нас! —</motion.div>
               </div>
@@ -112,13 +115,18 @@ export default function FAQ() {
           className="relative mt-[100px]"
           style={{height
           }}>
-            <div className="absolute h-[1550%] w-[120%] -left-[10%] bg-indigo-50 rounded-b-[50%] z-[1] shadow-circle border-b-2 border-black"></div>
+            <div className="absolute h-[1550%] w-[120%] -left-[10%] bg-indigo-50 rounded-b-[50%] z-[1] shadow-circle"></div>
           </motion.div>
         </section>
     )
 }
 
-export function Accordian({ children, value, onChange, ...props }) {
+interface AccordianProps {
+  children: ReactNode;
+  value?: string | null; // Це поточне вибране значення
+  [x: string]: any; // Додаткові пропси
+}
+function Accordian({ children, value, onChange, ...props }: AccordianProps) {
   const [selected, setSelected] = useState(value)
 
   useEffect(() => {
@@ -134,13 +142,20 @@ export function Accordian({ children, value, onChange, ...props }) {
   )
 }
 
-export function AccordianItem({ children, value, trigger, ...props }) {
+interface AccordianItemProps {
+  children: ReactNode;
+  value?: string; // Унікальне значення для кожного елементу
+  trigger: string; // Текст або контент для тригера (заголовка)
+  [x: string]: any; // Додаткові пропси
+}
+
+function AccordianItem({ children, value, trigger, image, ...props }: AccordianItemProps) {
   const MotionArrowRightIcon = motion(ArrowRightIcon)
   const [isHover, setIsHover] = useState(false);
   const { selected, setSelected } = useContext(AccordianContext)
   const open = selected === value
   const size = 16;
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null);
 
   return (
     <li className="border-2 bg-white border-black shadow-brutalism mb-4" {...props}
@@ -148,7 +163,7 @@ export function AccordianItem({ children, value, trigger, ...props }) {
       <motion.header
         role="button" 
         onClick={() => setSelected(open ? null : value)}
-        className="relative flex justify-between items-center px-6 py-6 text-copy text-4xl font-black leading-[0.9] tracking-tighter overflow-clip"
+        className="relative flex justify-between items-center p-4 lg:p-6 text-copy text-xl lg:text-4xl font-black leading-[0.9] tracking-tighter overflow-clip"
         onMouseEnter={()=> setIsHover(true)}
         onMouseLeave={()=> setIsHover(false)}
         animate={{
@@ -159,9 +174,11 @@ export function AccordianItem({ children, value, trigger, ...props }) {
           ease: 'backInOut'
         }}
       >
+        <div className="flex gap-8  ">
         <div className="z-10">{trigger}</div>
+        </div>
               <motion.div 
-        className="absolute z-10 top-4 right-4 flex justify-center items-center w-12 h-12 border-2 border-black shadow-brutalism"
+        className="absolute z-10 top-2 right-2 lg:top-4 lg:right-4 flex justify-center items-center w-6 h-6 lg:w-12 lg:h-12 border-2 border-black shadow-brutalism"
         animate={{
             rotate: 
             isHover ? "45deg" : open ? "-90deg" : "90deg",
@@ -185,7 +202,7 @@ export function AccordianItem({ children, value, trigger, ...props }) {
         />
         </motion.div>
         <motion.div
-        className='absolute z-0 top-4 right-4 w-12 h-12 bg-[#5b21b6]'
+        className='absolute z-0 top-2 right-2 w-6 h-6 lg:top-4 lg:right-4 lg:w-12 lg:h-12 bg-[#5b21b6]'
         animate={{
           scale: isHover || open ? 100 : 1,
         }}
@@ -205,7 +222,7 @@ export function AccordianItem({ children, value, trigger, ...props }) {
           ease: 'backInOut'
         }}
       >
-        <div className=" text-2xl font-normal w-2/4 text-copy opacity-80 p-8 leading-[1.2] tracking-tight" ref={ref}>
+        <div className="text-md lg:text-2xl font-normal w-full lg:w-2/4 text-copy opacity-80 p-4 lg:p-8 leading-[1.2] tracking-tight" ref={ref}>
           {children}
         </div>
       </motion.div>

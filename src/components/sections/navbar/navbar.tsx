@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils"
 import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 // UI Components Imports
 import NavButton from "@/components/ui/nav-button";
-
+import MobileMenuButton from "@/components/ui/mobileMenuButton";
+import MobileMenu from "@/components/ui/mobileMenu";
 // shadCN Components Imports
 
 import {
@@ -20,25 +21,37 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-
-// Drawers Components Imports
-import { Drawer } from 'vaul';
-import LeadDrawer from "@/components/drawers/lead";
-import ExamsDrawer from "@/components/drawers/exams";
-import HistoryDrawer from "@/components/drawers/history";
-import AdvantagesDrawer from "@/components/drawers/advantages";
-import TeamDrawer from "@/components/drawers/team";
-import ContactsDrawer from "@/components/drawers/contacts";
-
 export interface INavbarProps {
-      children: React.ReactNode;
+      children?: React.ReactNode;
       distance?: number;
 }
 
 export default function Navbar ({ children, distance = 0.6 }: INavbarProps) {
+
+  const [isActive, setIsActive] = useState(false);
+  const [mobileMenuOptions, setMobileMenuOptions] = useState({
+    open: { width: 0, height: 0, top: "0px", right: "0px", transition: {} },
+    closed: { width: "0px", height: "0px", top: "0px", right: "0px", transition: {} },
+  });
   
-  const [showHistoryDrawer, setShowHistoryDrawer] = React.useState(false);
-  const [showAdvantagesDrawer, setShowAdvantagesDrawer] = React.useState(false);
+  useEffect(() => {
+    setMobileMenuOptions({
+      open: {
+        width: window.innerWidth,
+        height: window.innerHeight,
+        top: "0px",
+        right: "0px",
+        transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
+      },
+      closed: {
+        width: "0px",
+        height: "0px",
+        top: "0px",
+        right: "0px",
+        transition: { duration: 0.75, delay: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1] },
+      },
+    });
+  }, []);
   const [showTeamDrawer, setShowTeamDrawer] = React.useState(false);
 
   useLockBodyScroll(showTeamDrawer)
@@ -68,9 +81,11 @@ export default function Navbar ({ children, distance = 0.6 }: INavbarProps) {
         };
       
         const handleMouseLeave = () => {
+          setTimeout(() => {
           setIsHovered(false);
           x.set(0);
           y.set(0);
+          }, 200);
         };
 
   const [isScrollingUp, setIsScrollingUp] = useState(true);
@@ -103,8 +118,8 @@ export default function Navbar ({ children, distance = 0.6 }: INavbarProps) {
 	const lastYRef = useRef(0);
 
   return (
-    <>
-    <motion.section 
+    <section className="z-[60] fixed top-0 left-0 ">
+    <motion.div 
     animate={{ y: isScrollingUp ? 0 : "-100%" }}
     transition={{
       duration: 0.8,
@@ -129,122 +144,95 @@ export default function Navbar ({ children, distance = 0.6 }: INavbarProps) {
       >
       <Link href="/">
       <Image 
-      className="p-3 border-2 border-black shadow-brutalism bg-white" src='/images/logo.svg' width='150' height='70' alt="Логотип мовного центру Статус"
+      className="hidden lg:inline p-3 border-2 border-black shadow-brutalism bg-white min-w-[75px] min-h-[35px] lg:min-w-[150px] lg:min-h-[70px]" src='/images/logo-status.png' width='150' height='70' alt="Логотип мовного центру Статус"
       />
       </Link>
       </motion.div>
       <div className="z-[45] absolute top-0 left-0 w-full h-full bg-black"></div>
       </div>
-      <div className="col-start-5">
+      <div className="hidden xl:inline lg:col-start-3 2xl:col-start-5 ">
         <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Про Нас</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <ListItem href="/docs" title="Історія"  onClick={() => setShowHistoryDrawer(true)}>
+                <ListItem href="/history" title="Історія">
                 Дізнайтеся більше про історію заснування та розвитку мовного центру
                 </ListItem>
-                <ListItem href="/docs/installation" title="Переваги" onClick={() => setShowAdvantagesDrawer(true)}>
+                <ListItem href="/advantages" title="Переваги">
                 Коротенько про те, чому ми - ваш найкращий вибір
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Наша команда" onClick={() => setShowTeamDrawer(true)}>
+                <ListItem href="/#team" title="Наша команда">
+                Професіонали, що будуть направляти вас на шляху до Native
+                </ListItem>
+                <ListItem href="/reviews" title="Відгуки">
                 Професіонали, що будуть направляти вас на шляху до Native
                 </ListItem>
               </ul>
             </NavigationMenuContent>
-              <Drawer.Root open={showHistoryDrawer} onOpenChange={setShowHistoryDrawer}>
-                <Drawer.Overlay className="z-[50] fixed inset-0 bg-black/40" />
-                <Drawer.Portal>
-                  <HistoryDrawer/>
-                </Drawer.Portal>
-              </Drawer.Root>
-              <Drawer.Root open={showAdvantagesDrawer} onOpenChange={setShowAdvantagesDrawer}>
-                <Drawer.Overlay className="z-[50] fixed inset-0 bg-black/40" />
-                <Drawer.Portal>
-                  <AdvantagesDrawer/>
-                </Drawer.Portal>
-              </Drawer.Root>
-              <Drawer.Root modal={true} open={showTeamDrawer} onOpenChange={setShowTeamDrawer}>
-                <Drawer.Overlay className="z-[50] fixed inset-0 bg-black/40" />
-                <Drawer.Portal>
-                  <TeamDrawer/>
-                </Drawer.Portal>
-              </Drawer.Root>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Навчання</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
-                    <div
-                      className="flex h-full w-full select-none flex-col justify-end no-underline outline-none focus:shadow-md border-2 border-black"
-                    >
-                    </div>
-                  </NavigationMenuLink>
-                </li>
-                <ListItem href="/docs" title="Для дорослих">
+                <ListItem href="/forAdults" title="Для дорослих">
                   Аби стати справжніми дорослими у англійській.
                 </ListItem>
-                <ListItem href="/docs/installation" title="Для компаній">
+                <ListItem href="/forAdults" title="Для компаній">
                   Для корпоративних клієнтів, що прагнуть виховати свій персонал.
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Для дітей">
+                <ListItem href="/forKids" title="Для дітей">
                   Для дітей та підлітків, аби покращити навички у мові.
                 </ListItem>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-            <Drawer.Root>
-              <Drawer.Trigger>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink href="/exams"className={navigationMenuTriggerStyle()}>
                 Іспити
               </NavigationMenuLink>
-              </Drawer.Trigger>
-              <Drawer.Portal>
-              <Drawer.Overlay className="z-[50] fixed inset-0 bg-black/40" />
-                <ExamsDrawer/>
-                </Drawer.Portal>
-              </Drawer.Root>
-            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-          <Drawer.Root>
-          <Drawer.Trigger>     
-      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+      <NavigationMenuLink href="/contacts"className={navigationMenuTriggerStyle()}>
                 Контакти
               </NavigationMenuLink>
-              </Drawer.Trigger>
-              <Drawer.Portal>
-              <Drawer.Overlay className="z-[50] fixed inset-0 bg-black/40" />
-                <ContactsDrawer/>
-                </Drawer.Portal>
-              </Drawer.Root>
           </NavigationMenuItem>
         </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <div className="col-end-11 col-start-auto justify-self-end">
+      <div className="hidden xl:inline col-end-11 col-start-auto justify-self-end">
       <NavButton>Залишити<br/>заявку</NavButton>
       </div>
-</motion.section>
-</>
+      <div className="inline xl:hidden col-end-10">
+      <MobileMenuButton isActive={isActive} toggleMenu={() => {setIsActive(!isActive)}}/>
+      </div>
+</motion.div>
+<motion.div
+                className="fixed top-0 left-0 w-[100vw] h-screen xl:hidden relative bg-purpleLight"
+                variants={mobileMenuOptions}
+                animate={isActive ? "open" : "closed"}
+                initial="closed"
+            >
+                <AnimatePresence>
+                    {isActive && <MobileMenu />}
+                </AnimatePresence>
+            </motion.div>
+</section>
   );
 }
 
 const ListItem = React.forwardRef<
-  React.Ref<"a">,
+  React.ComponentRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, href, children, ...props }, ref) => {
 
   return (
     <li>
       <NavigationMenuLink asChild>
-        <div
+        <a
           ref={ref}
+          href={href}
           className={cn(
             "block select-none space-y-1 p-3 leading-none bg-white outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground border-2 border-black",
             className
@@ -252,10 +240,10 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="text-lg font-bold leading-none underline">{title}</div>
-          <p className="line-clamp-2 text-base font-semibold leading-snug text-black">
+          <span className="line-clamp-2 text-base font-semibold leading-snug text-black">
             {children}
-          </p>
-        </div>
+          </span>
+        </a>
       </NavigationMenuLink>
     </li>
   )

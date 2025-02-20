@@ -60,7 +60,7 @@ export default function Cursor(props: ICursorProps) {
 
   return (
     <motion.svg
-      className="z-[80] cursor fixed drop-shadow-lg"
+      className="hidden lg:inline z-[80] cursor fixed drop-shadow-lg"
       style={{ top: smoothMouse.y, left: smoothMouse.x}}
       initial={{
         scale: 0,
