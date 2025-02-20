@@ -1,8 +1,7 @@
 import React from 'react';
-import { useGLTF } from '@react-three/drei';
-import { Float } from '@react-three/drei';
-import { useTransform, MotionValue } from 'motion/react';
+import { useGLTF, Float } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
+import { useTransform, MotionValue } from 'framer-motion';
 import { BufferGeometry, Material, Mesh as ThreeMesh, Object3D } from 'three';
 
 export interface IModelProps {

@@ -1,6 +1,6 @@
 'use client'
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useMotionValue, useScroll, useSpring, useTransform } from "motion/react";
+import React, { useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
 
 export interface ICoursesProps {
