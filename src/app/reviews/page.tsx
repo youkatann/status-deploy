@@ -1,6 +1,5 @@
 import React from 'react'
 import { Reviews } from '@/data';
-import Image from 'next/image';
 import Navbar from '@/components/sections/navbar/navbar';
 import Cursor from '@/components/ui/cursor';
 

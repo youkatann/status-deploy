@@ -1,8 +1,7 @@
 'use client';
-import Image from 'next/image';
 import { useRef, useState } from 'react';
 import gsap from 'gsap';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export default function Home() {
 

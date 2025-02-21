@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Canvas } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import Model from "@/components/sections/hero/model"
-import { motion, useMotionValue, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
 
 type FooterProps = {

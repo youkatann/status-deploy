@@ -1,5 +1,5 @@
 'use client'
-import { motion, useMotionValue, useSpring } from "motion/react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export interface ICursorProps {}

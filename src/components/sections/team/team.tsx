@@ -1,19 +1,17 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { teamMates } from '@/data';
-import { motion, useMotionValue, useSpring, useScroll, useTransform, AnimatePresence } from 'motion/react';
+import { motion, useMotionValue, useSpring, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Curve from '@/components/ui/curve';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { BoltIcon } from '@heroicons/react/24/solid';
 import { Canvas } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import Model from '../about/model';
-import { Drawer } from 'vaul';
 
 export interface ITeamProps {
   teamMembers?: React.RefObject<HTMLDivElement[]>
 }
-
 
 export default function Team (props: ITeamProps) {
  const container = useRef(null);
@@ -21,8 +19,6 @@ export default function Team (props: ITeamProps) {
    target: container,
    offset: ['start end', 'end start']
  })
- 
- scrollYProgress.onChange(latest => {console.log(latest)});
 
  const mouse = {
      x: useMotionValue(0),

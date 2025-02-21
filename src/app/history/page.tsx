@@ -1,4 +1,3 @@
-import { Drawer } from 'vaul';
 import Cursor from '@/components/ui/cursor';
 import Navbar from '@/components/sections/navbar/navbar';
 

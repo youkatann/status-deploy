@@ -1,5 +1,5 @@
 'use client';
-import { motion, useMotionValue, useSpring, useScroll, useTransform } from 'motion/react';
+import { motion, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion';
 import { aboutAdvantages } from "@/data";
 import { useState, useRef } from 'react';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';

@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 import { useLockBodyScroll } from "react-use";
 import { cn } from "@/lib/utils"
-import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
+import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion";
 // UI Components Imports
 import NavButton from "@/components/ui/nav-button";
 import MobileMenuButton from "@/components/ui/mobileMenuButton";

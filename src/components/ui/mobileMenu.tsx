@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown } from "lucide-react";
+import { motion } from 'framer-motion';
+import { ChevronDown } from "lucide-react";
 
 const menuItems = [
     { title: "Про нас", link: "#", subMenu: [

@@ -1,12 +1,7 @@
 'use client'
 import * as React from 'react';
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button";
-import Curve from "@/components/ui/curve"
-import NavButton from '@/components/ui/nav-button';
 import { examsInfo, examsTypes } from '@/data';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { BoltIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { studyKids612, studyKids1318, examsTypes } from "@/data";
 import Navbar from "@/components/sections/navbar/navbar";
 import Cursor from "@/components/ui/cursor";

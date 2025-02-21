@@ -2,10 +2,9 @@
 import {
   SetStateAction,
   Dispatch } from "react";
-import { ReactNode, MouseEventHandler } from "react";
+import { ReactNode } from "react";
 import React, { createContext, useContext, useRef, useState, useEffect } from "react";
-import { motion } from "motion/react";
-import { studyKids612, studyKids1318, examsTypes } from "@/data";
+import { motion } from "framer-motion";
 import Navbar from "@/components/sections/navbar/navbar";
 import Cursor from "@/components/ui/cursor";
 import { ArrowRightIcon } from '@heroicons/react/24/outline';

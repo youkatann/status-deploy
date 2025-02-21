@@ -1,6 +1,6 @@
 'use client'
 import { createContext, useContext, useRef, useEffect, useState, ReactNode, Dispatch, SetStateAction } from "react"
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Curve from "@/components/ui/curve"
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid"

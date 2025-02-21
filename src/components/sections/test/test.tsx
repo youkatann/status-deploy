@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Curve from '@/components/ui/curve';
 import { TypeAnimation } from 'react-type-animation';
-import { motion, useMotionValue, useSpring, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export interface ITestProps {
 }

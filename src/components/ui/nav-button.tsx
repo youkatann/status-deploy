@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from "react";
-import { motion, useMotionValue, useSpring } from "motion/react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import Link from "next/link";
 
 const SPRING_CONFIG = { damping: 100, stiffness: 400 };
